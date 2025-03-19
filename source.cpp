@@ -10,6 +10,7 @@ int gloveboxLength;
 int gloveboxWidth;
 int elevatorDepth;
 int elevatorDoorWidth;
+int elevatorWidth;
 
 void gloveboxQuestions() {
 
@@ -18,6 +19,9 @@ void gloveboxQuestions() {
 
 	cout << "Please enter Glovebox width" << endl;
 	cin >> gloveboxWidth;
+
+	court << "Please enter the elevator width" << endl;
+	cin >> elevatorWidth;
 }
 
 void elevatorQuestions() {
@@ -27,6 +31,9 @@ void elevatorQuestions() {
 
 	cout << "Please enter Elevator door width" << endl;
 	cin >> elevatorDoorWidth;
+	
+	court << "Please enter the elevator width" << endl;
+	cin >> elevatorWidth;
 }
 
 /* Glovebox lengths
@@ -42,10 +49,24 @@ void elevatorQuestions() {
 void gloveboxLength() { 
 
 	int standard1250 = 96;
-	int standard1500 = 110;
-	int standard1800 = 120;
-	int standard1950 = 120;
+	int standard1250Freezer = 79.25;
+	int standard1500 = 89.25;
+	int standard1500Freezer = 99.75;
+	int standard1800 = 101.25;
+	int standard1800Freezer = 111.75;
+	int standard1950 = 107.25;
+	int standard1950Freezer = 117.75;
 
+}
+
+void gloveboxAdditions() {
+
+	int largeAntechamber = 30;
+	int smallAntechamber = 13;
+	int pipes = 5.5;
+	int gloveports = 1;
+	int freezer = 10.5;
+	
 }
 
 /* Glovebox width
@@ -75,6 +96,23 @@ int main(){
 	gloveboxQuestions();
 
 	elevatorQuestions();
+
+	if (gloveboxLength < elevatorDepth)
+		cout << "Antechambers or freezers don't need to be removed" << endl;
+	else if (gloveboxLength + largeAntechamber > elevatorDepth)
+		cout << "Large antechamber needs to be removed" << endl;
+	else if (gloveboxLength + smallAntechamber > elevatorDepth)
+		cout << "Small antechamber needs to be removed" << endl;
+	else if (gloveboxLength + freezer > elevatorDepth)
+		cout << "Freezer end panel needs to be removed, cleaned, and mounted with four pieces of hardware" << endl;
+	else if (gloveboxWidth < elevatorWidth)
+		cout << "Pipes don't need to be removed" << endl;
+	else if (gloveboxWidth + pipes > elevatorWidth)
+		cout << "Pipes need to be removed" << endl;
+	else if (gloveboxWidth + gloveports > elevatorWidth)
+		cout << "Window needs to be flipped" << endl;
+	
+	
 
 }
 
