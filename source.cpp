@@ -10,18 +10,33 @@ int gloveboxLength;
 int gloveboxWidth;
 int elevatorDepth;
 int elevatorDoorWidth;
+int elevatorDoorHeight;
 int elevatorWidth;
+int gloveboxDims; 
+int doorWidth;
+int doorHeight;
+int gloveBox;
+
 
 void gloveboxQuestions() {
 
-	cout << "Please enter Glovebox length" << endl;
-	cin >> gloveboxLength;
+	//int gloveboxDims
 
-	cout << "Please enter Glovebox width" << endl;
-	cin >> gloveboxWidth;
+	cout << "Please enter Glovebox dimensions. (i.e. 1250/780)" << endl;
+	cin >> gloveboxDims; 
 
-	court << "Please enter the elevator width" << endl;
-	cin >> elevatorWidth;
+	if (gloveboxDims == "1250/780") {
+		gloveBox
+	}
+
+	// cout << "Please enter Glovebox length" << endl;
+	// cin >> gloveboxLength;
+
+	// cout << "Please enter Glovebox width" << endl;
+	// cin >> gloveboxWidth;
+
+	// court << "Please enter the elevator width" << endl;
+	// cin >> elevatorWidth;
 }
 
 void elevatorQuestions() {
@@ -34,6 +49,19 @@ void elevatorQuestions() {
 	
 	court << "Please enter the elevator width" << endl;
 	cin >> elevatorWidth;
+
+	court << "Please enter the elevator door height" << endl;
+	cin >> elevatorDoorHeight;
+}
+
+void doorQuestions() {
+
+	cout << "Please enter door width" << endl;
+	cin >> doorWidth;
+	
+	court << "Please enter the door height" << endl;
+	cin >> doorHeight;
+	
 }
 
 /* Glovebox lengths
